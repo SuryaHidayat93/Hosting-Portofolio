@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #081b29;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.header .logo span {
+    color: #FF6600;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #ededed;
+    font-weight: 500;
+    margin-left: 20px;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #FF6600;
+}
+
+.gallery {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    display: flexbox;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 80%;
+    /* Sesuaikan lebar galeri */
+    justify-content: space-between;
+}
+
+/* Atur gaya untuk setiap gambar */
+.gallery img {
+    width: 200px;
+    /* Sesuaikan lebar gambar */
+    height: 200px;
+    /* Sesuaikan tinggi gambar */
+    margin: 10px;
+    border-radius: 5px;
+    /* Tambahkan efek border radius */
+}
+
+.gallery-item {
+    position: relative;
+    /* Diperlukan untuk positioning elemen anak */
+    display: inline-block;
+    /* Untuk mengatur layout galeri */
+    margin: 10px;
+    width: 220px;
+    /* Sesuaikan lebar */
+    height: 220px;
+    /* Sesuaikan tinggi */
+
+}
+
+.gallery-item img {}
+
+.gallery-item::after {
+    /* target elemen pseudo-element setelah */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Warna background (sesuaikan transparansi) */
+    opacity: 0;
+    transition: opacity .2s ease;
+    z-index: -1;
+    border-radius: 10px;
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+    /* Tampilkan overlay saat hover */
+}
+
+.gallery-item img {
+    transform: rotate(-360deg);
+    animation: rotate 1s ease-in-out;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(-360deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.bubble {
+    position: absolute;
+    right: 0;
+    top: 280px;
+    z-index: -1;
+
+}
